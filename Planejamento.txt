@@ -1,0 +1,36 @@
+Planejamento
+
+Entidades
+
+Usuarios
+ Um Usuario tem varios usuarios
+Tarefas x Usuario
+Uma tarefa pertence a um usuarios
+
+
+Categorias
+
+Um usuarios tem varias Categorias
+
+Uma categoria tem varias Tarefas
+
+Tarefas tem varias Categorias
+
+Tarefa:
+- id
+- titulo
+- data
+- descricao
+- categoria_id
+- usuario_id
+
+Categorias
+- id
+- nome
+- data
+- cor (hexadecimal)
+- usuario_id
+
+
+
+
