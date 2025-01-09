@@ -9,11 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css"/>
 <title>Document</title>
-</head>
-<body>
+
     <div class="container">
         <div class="sidebar">
-            Logo
+            <img src="/assests/images/logo.png"/>
         </div>
         <div class="content">
             <nav>
@@ -23,15 +22,50 @@
             </nav>
             <main>
                 <section class="graph">
-                    <div className="graph_header">
+                    <div class="graph_header">
                     <h2>Progresso do dia</h2>
                     <hr class="lineheader"/>
                     data
                     </div>
-                    <div class="graph_header-submit">Tarefas: <b> 3/7 </b></div>
+                    <div class="graph_header-subtitle">Tarefas: <b> 3/7 </b></div>
+                    <div class="graph-placeholder">
+                    </div>
+                    <p class="graph_header-tasks_left">Restam 3 tarefas a serem realizadas</p>
                 </section>
                 <section class="list">
-                    List
+                    <div class="list-header">
+                        <select class="list_header-select">
+                            <option value="1">Todas as terefas</option>
+                        </select>
+                    </div>
+                    <div class="task_list">
+                        <div class="task">
+                            <div class="title">
+                                <input type="checkbox"/>
+                                <div class="task_title">Titulo da tarefa</div>
+                            </div>
+                            <div class="priority">
+                                <div class="sphere"></div>
+                                <div>Titulo da tarefa</div>
+                            </div>
+                            <div class="actions">
+                                Editar - Excluir
+                            </div>
+                        </div>
+                        <div class="task">
+                            <div class="title">
+                                <input type="checkbox"/>
+                                <div class="task_title">Titulo da tarefa</div>
+                            </div>
+                            <div class="priority">
+                                <div class="sphere"></div>
+                                <div>Titulo da tarefa</div>
+                            </div>
+                            <div class="actions">
+                                Editar - Excluir
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </main>
         </div>
