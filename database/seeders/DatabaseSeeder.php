@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
            //UserSeeder::class
             ]);
-            User::factory(1000)->create();
-            Category::factory(1000)->create();
+            User::factory(50)->create();
+            Category::factory(100)->create();
             Task::factory(100)->create();
     }
 }
