@@ -1,36 +1,27 @@
 <x-layout page="Login">
     <x-slot:btn>
         <a href="{{ route('home') }}" class="btn btn-primary">
-           Voltar
+            Voltar
         </a>
     </x-slot:btn>
-    <section id="create_section_task">
+
+    <section id="section_task">
         <h1>Criar tarefa</h1>
-        <form>
-            <div class="inputArea">
-                <label for="title">Titulo da Task</label>
-                <input  id="title" name="title" placeholder="Digite o titulo da tarefa" requires/>
-            </div>
-            <div class="inputArea">
-                <label for="title">Data de Realização</label>
-                <input type="date" name="due_date" placeholder="Digite o titulo da tarefa" requires/>
-            </div>
-            <div class="inputArea">
-                <label for="category">Categoria</label>
-                <select id="category" name="category" required>
-                    <option selected disabled value="">Selecione a Categoria</option>
-                    <option>Valor qualquer</option>
-                </select>
-            </div>
+        <form method="POST" action="{{route('task.create_action')}}">
+            @csrf
+            <x-form.text_input name="title" label="Titulo da task" placeholder="Digite sua Task" />
+            <x-form.text_input type="datetime-local" name="due_date" label="Titulo da task" placeholder="Digite sua Task" />
+            <x-form.select_input name="category_id" label="Categoria" placeholder="Digite sua Task">
+               @foreach ($categories as $category)
+               <option value="{{$category->id}}">{{$category->title}}</option>
+               @endforeach
+            </x-form.select_input>
+            <x-form.textarea_input name="description" label="Descrição da tarefa" placeholder="Digite a descrição da tarefa" />
 
-            <div class="inputArea">
-                <label for="title">Descrição da Tarefa</label>
-                <textarea name="description" placeholder="Digite uma descrição para sua tarefa"></textarea>
-            </div>
 
-            <div class="inputArea">
-                <button type="submit" class="btn btn-primary">Criar Tarefa</button>
-            </div>
+            <x-form.form_button resetTxt="Resetar" submitTxt="Criar Tarefa"/>
+
         </form>
     </section>
+
 </x-layout>
